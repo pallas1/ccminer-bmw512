@@ -1,6 +1,6 @@
-# ccminer
+# ccminer for BMW512 PoW algorythm by Pallas
 
-Based on Christian Buchner's &amp; Christian H.'s CUDA project, no more active on github since 2014.
+Based on tpruvot ccminer, which in turn is based on Christian Buchner's &amp; Christian H.'s CUDA project, no more active on github since 2014.
 
 Check the [README.txt](README.txt) for the additions
 
