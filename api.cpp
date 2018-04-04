@@ -15,6 +15,9 @@
 # include <winsock2.h>
 #endif
 
+#include <winsock2.h>
+#include <Ws2ipdef.h>
+#include <WS2tcpip.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
