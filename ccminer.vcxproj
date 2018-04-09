@@ -57,10 +57,10 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;CURL_STATICLIB;USE_WRAPNVML;SCRYPT_KECCAK512;SCRYPT_CHACHA;SCRYPT_CHOOSE_COMPILETIME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;compat;compat\curl-for-windows\curl\include;compat\jansson;compat\getopt;compat\pthreads;compat\curl-for-windows\openssl\openssl\include;compat\curl-for-windows\zlib;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\mpir-2.6.0\build.vc10\Win32\Release;.;compat;compat\curl-for-windows\curl\include;compat\jansson;compat\getopt;compat\pthreads;compat\curl-for-windows\openssl\openssl\include;compat\curl-for-windows\zlib;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);..\curl-7.40.0\include;..\openssl-0.9.8zf\include</AdditionalIncludeDirectories>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <OpenMPSupport>true</OpenMPSupport>
@@ -68,9 +68,9 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>cudart_static.lib;cuda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;pthreadVC2.lib;libcurl.x86.lib;openssl.x86.lib;zlib.x86.lib;ws2_32.lib;Wldap32.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>mpir.lib;cudart_static.lib;cuda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;pthreadVC2.lib;libcurl.x86.lib;openssl.x86.lib;zlib.x86.lib;ws2_32.lib;Wldap32.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib;msvcrt.lib</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>compat\pthreads\x86;compat\curl-for-windows\out\x86\Release\lib;compat\nvapi\x86;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>compat\pthreads\x86;compat\curl-for-windows\out\x86\Release\lib;compat\nvapi\x86;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir);..\openssl-0.9.8zf\;..\mpir-2.6.0\build.vc10\Win32\Release;..\curl-7.40.0\lib</AdditionalLibraryDirectories>
       <AdditionalOptions>/NODEFAULTLIB:LIBCMT %(AdditionalOptions)</AdditionalOptions>
       <LinkStatus>true</LinkStatus>
     </Link>
@@ -83,6 +83,9 @@
       <CodeGeneration>compute_50,sm_50</CodeGeneration>
       <Include>$(NVTOOLSEXT_PATH)\include;..\..\..\Common\C99</Include>
     </CudaCompile>
+    <CudaLink>
+      <GPUDebugInfo>false</GPUDebugInfo>
+    </CudaLink>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -131,7 +134,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;CURL_STATICLIB;USE_WRAPNVML;SCRYPT_KECCAK512;SCRYPT_CHACHA;SCRYPT_CHOOSE_COMPILETIME;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;compat;compat\curl-for-windows\curl\include;compat\jansson;compat\getopt;compat\pthreads;compat\curl-for-windows\openssl\openssl\include;compat\curl-for-windows\zlib;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\ccminer-build-thing\curl-7.40.0\build\Win32\VC12\LIB Release - LIB OpenSSL;.;compat;compat\curl-for-windows\curl\include;compat\jansson;compat\getopt;compat\pthreads;compat\curl-for-windows\openssl\openssl\include;compat\curl-for-windows\zlib;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
       <MinimalRebuild>true</MinimalRebuild>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -144,7 +147,7 @@
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>cudart_static.lib;cuda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;pthreadVC2.lib;libcurl.x86.lib;openssl.x86.lib;zlib.x86.lib;ws2_32.lib;Wldap32.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>compat\pthreads\x86;compat\curl-for-windows\out\x86\Release\lib;compat\nvapi\x86;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\ccminer-build-thing\curl-7.40.0\lib;compat\pthreads\x86;compat\curl-for-windows\out\x86\Release\lib;compat\nvapi\x86;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
       <AdditionalOptions>/NODEFAULTLIB:LIBCMT %(AdditionalOptions)</AdditionalOptions>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <LinkStatus>false</LinkStatus>
@@ -405,6 +408,7 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="cuda.cpp" />
+	<CudaCompile Include="bmw512.cu" />
     <CudaCompile Include="cuda_groestlcoin.cu" />
     <CudaCompile Include="cuda_myriadgroestl.cu" />
     <CudaCompile Include="scrypt\blake.cu" />
