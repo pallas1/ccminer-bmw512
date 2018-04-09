@@ -11,13 +11,12 @@
 #define APIVERSION "1.9"
 
 #ifdef WIN32
-# define  _WINSOCK_DEPRECATED_NO_WARNINGS
-# include <winsock2.h>
+  #define _WINSOCK_DEPRECATED_NO_WARNINGS
+  #include <winsock2.h>
+  #include <Ws2ipdef.h>
+  #include <WS2tcpip.h>
 #endif
 
-#include <winsock2.h>
-#include <Ws2ipdef.h>
-#include <WS2tcpip.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
